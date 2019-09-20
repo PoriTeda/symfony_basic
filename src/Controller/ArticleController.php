@@ -1,15 +1,13 @@
 <?php
     namespace App\Controller;
     use App\Entity\Article;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\Routing\Annotation\Route;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
-    use Symfony\Component\Form\Extension\Core\Type\TextType;
-    use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-    use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-class ArticleController extends Controller{
+    use App\Form\ArticleType;
+class ArticleController extends AbstractController{
     /**
      * @Route("/", name="article_list")
      * @Method({"GET"})
@@ -28,18 +26,9 @@ class ArticleController extends Controller{
     public function new(Request $request)
     {
         $article = new Article();
-        //create new form for create article
-        //add( name input, type input, array to custom style), create with createFormBuilder() then getForm()
-        $form = $this->createFormBuilder($article)
-            ->add('title', TextType::class, array("attr" => array("class" => "form-control")))
-            ->add('body', TextareaType::class, array(
-                "attr" => array("class" => "form-control"),
-                "required" => false
-                ))
-            ->add('save', SubmitType::class, array(
-                "attr" => array("class" => "btn btn-primary mt-3"),
-                "label" => "Create"
-                ))->getForm();
+
+        $form = $this->createForm(ArticleType::class, $article);
+
         //handle submit action
         $form->handleRequest($request);
 
@@ -56,7 +45,9 @@ class ArticleController extends Controller{
         }
 
         //after get form then createView to show
-        return $this->render("articles/new.html.twig" , array('form' => $form->createView()));
+        return $this->render('articles/new.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
@@ -67,25 +58,14 @@ class ArticleController extends Controller{
     {
 
         $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
-        //create new form for create article
-        //add( name input, type input, array to custom style), create with createFormBuilder() then getForm()
-        $form = $this->createFormBuilder($article)
-            ->add('title', TextType::class, array("attr" => array("class" => "form-control")))
-            ->add('body', TextareaType::class, array(
-                "attr" => array("class" => "form-control"),
-                "required" => false
-            ))
-            ->add('save', SubmitType::class, array(
-                "attr" => array("class" => "btn btn-primary mt-3"),
-                "label" => "Update"
-            ))->getForm();
+        $form = $this->createForm(ArticleType::class, $article);
         //handle submit action
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
             //get data submitted
-            $article = $form->getData();
+            $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
 
@@ -95,7 +75,9 @@ class ArticleController extends Controller{
         }
 
         //after get form then createView to show
-        return $this->render("articles/edit.html.twig" , array('form' => $form->createView()));
+        return $this->render('articles/edit.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
