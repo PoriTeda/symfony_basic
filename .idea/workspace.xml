@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3431165-daa8-4ab9-9ede-a03505afbb60" name="Default Changelist" comment="Create FormType">
+    <list default="true" id="d3431165-daa8-4ab9-9ede-a03505afbb60" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/navbar.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,8 +195,16 @@
       <workItem from="1568793555770" duration="11280000" />
       <workItem from="1568812423241" duration="1840000" />
       <workItem from="1568964564407" duration="153000" />
-      <workItem from="1568964809863" duration="3934000" />
+      <workItem from="1568964809863" duration="9915000" />
     </task>
+    <task id="LOCAL-00001" summary="Create FormType">
+      <created>1568968780922</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568968780922</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -14,8 +14,8 @@
                 <tr>
                     <td>{{ article.title }}</td>
                     <td>
-                        <a href="{{ path('article_show',{id : article.id}) }}" class="btn btn-dark">Show</a>
-                        <a href="{{ path('article_edit',{id : article.id}) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ path('article_show',{id : article.id}) }}" class="btn btn-dark"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <a href="{{ path('article_edit',{id : article.id}) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                         <a href="#" class="btn btn-danger delete-article"
                            data-id="{{ article.id }}">Delete</a>
                     </td>
