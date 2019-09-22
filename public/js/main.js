@@ -4,7 +4,7 @@ if (articles)
 {
     articles.addEventListener("click" , (e) => {
         //have many delete button, so identify what button clicked
-        if (e.target.className === "btn btn-danger delete-article")
+        if (e.target.className === "btn delete-article")
         {
             if (confirm("Are you sure?"))
             {
