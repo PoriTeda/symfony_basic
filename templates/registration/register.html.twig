@@ -3,13 +3,24 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
-
+<div class="card col-sm-4 mx-auto p-0">
+    <div class="card-header">
+    <h1  class="h3 mb-3 font-weight-normal">Register</h1>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_row(registrationForm.email, {label : 'Email'}) }}
+        </div>
+        <div class="form-group">
+        {{ form_row(registrationForm.plainPassword, {label : 'Password'}) }}
+        </div>
+        <div class="d-flex flex-column-reverse">
+            {{ form_row(registrationForm.agreeTerms, { 'attr' : {'class' : 'p-2'} }) }}
+        </div>
 
-        <button class="btn">Register</button>
+        <button class="btn btn-primary">Register</button>
     {{ form_end(registrationForm) }}
+    </div>
+</div>
 {% endblock %}

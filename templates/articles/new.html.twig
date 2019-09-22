@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}New Article{% endblock %}
 {% block body %}
+    <h1>Create new Article</h1>
     {{ form(form) }}
     <hr>
     <a href="{{ path('article_list') }}" class="btn btn-info">Go Back</a>

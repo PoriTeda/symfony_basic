@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block title %}Symfony Articles{% endblock %}
 {% block body %}
-    <h1>Articles</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Articles</h1>
+        <a href="{{ path('article_new') }}"><i class="fa fa-plus fa-2x text-success" aria-hidden="true"></i></a>
+    </div>
     {% if articles %}
         <table id="articles" class="table table-striped table-bordered table-hover ">
             <thead>
