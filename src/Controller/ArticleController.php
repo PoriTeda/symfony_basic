@@ -41,6 +41,7 @@ class ArticleController extends AbstractController{
             $entityManager->persist($article);
             $entityManager->flush();
 
+            $this->addFlash('info', 'New Article Created ');
             return $this->redirectToRoute("article_list");
         }
 
@@ -70,6 +71,7 @@ class ArticleController extends AbstractController{
             $entityManager = $this->getDoctrine()->getManager();
 
             $entityManager->flush();
+            $this->addFlash('info', 'Article Updated ');
 
             return $this->redirectToRoute("article_list");
         }

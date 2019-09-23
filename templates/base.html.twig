@@ -10,6 +10,9 @@
     <body>
         {{ include('inc/navbar.html.twig') }}
         <div class="container">
+            {% for messages in app.flashes('info') %}
+                <div class="alert alert-success">{{ messages }}</div>
+            {% endfor %}
             {% block body %}{% endblock %}
         </div>
         {% block javascripts %}{% endblock %}
